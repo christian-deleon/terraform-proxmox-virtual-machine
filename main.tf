@@ -1,4 +1,12 @@
-resource "proxmox_vm_qemu" "vm" {
+terraform {
+  required_providers {
+    proxmox = {
+      source = "Telmate/proxmox"
+    }
+  }
+}
+
+resource "proxmox_vm_qemu" "this" {
   name        = var.name
   target_node = var.target_node
 
