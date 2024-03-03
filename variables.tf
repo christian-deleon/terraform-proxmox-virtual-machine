@@ -14,6 +14,12 @@ variable "target_node" {
   description = "The name of the node where the virtual machine will be created"
 }
 
+variable "resource_pool" {
+  type        = string
+  default     = null
+  description = "The name of the resource pool"
+}
+
 variable "template_name" {
   type        = string
   description = "The name of the template to clone"

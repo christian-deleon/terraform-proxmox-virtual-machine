@@ -10,6 +10,7 @@ resource "proxmox_vm_qemu" "this" {
   name        = var.name
   vmid        = var.vmid
   target_node = var.target_node
+  pool        = var.resource_pool
 
   clone   = var.template_name
   os_type = var.os_type
