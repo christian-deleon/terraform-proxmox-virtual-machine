@@ -1,3 +1,7 @@
+############################################
+# Proxmox
+############################################
+
 variable "name" {
   type        = string
   description = "The name of the virtual machine"
@@ -7,6 +11,12 @@ variable "vmid" {
   type        = number
   default     = 0
   description = "The ID of the virtual machine"
+}
+
+variable "description" {
+  type        = string
+  default     = null
+  description = "The description of the virtual machine"
 }
 
 variable "target_node" {
@@ -29,6 +39,16 @@ variable "os_type" {
   type        = string
   description = "The type of the operating system. Options: ubuntu, centos, cloud-init"
 }
+
+variable "qemu_agent" {
+  type        = bool
+  default     = false
+  description = "Enable the QEMU Guest Agent"
+}
+
+############################################
+# Hardware
+############################################
 
 variable "cores" {
   type        = number
