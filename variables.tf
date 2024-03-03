@@ -36,7 +36,7 @@ variable "os_type" {
 
 variable "qemu_agent" {
   type        = bool
-  default     = false
+  default     = true
   description = "Enable the QEMU Guest Agent"
 }
 
