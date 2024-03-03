@@ -76,7 +76,6 @@ variable "disk_size" {
 
 variable "storage_name" {
   type        = string
-  default     = "ceph"
   description = "The name of the storage"
 }
 
