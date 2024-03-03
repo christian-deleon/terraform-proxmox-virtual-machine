@@ -24,12 +24,6 @@ variable "target_node" {
   description = "The name of the node where the virtual machine will be created"
 }
 
-variable "resource_pool" {
-  type        = string
-  default     = null
-  description = "The name of the resource pool"
-}
-
 variable "template_name" {
   type        = string
   description = "The name of the template to clone"
@@ -44,6 +38,18 @@ variable "qemu_agent" {
   type        = bool
   default     = false
   description = "Enable the QEMU Guest Agent"
+}
+
+variable "hastate" {
+  type        = string
+  default     = null
+  description = "The HA state of the virtual machine. One of 'started', 'stopped', 'enabled', 'disabled', or 'ignored'"
+}
+
+variable "hagroup" {
+  type        = string
+  default     = null
+  description = "The HA group of the virtual machine. HA State must be set."
 }
 
 ############################################

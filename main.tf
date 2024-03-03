@@ -11,12 +11,13 @@ resource "proxmox_vm_qemu" "this" {
   vmid        = var.vmid
   desc        = var.description
   target_node = var.target_node
-  pool        = var.resource_pool
   agent       = var.qemu_agent ? "1" : "0"
+  hastate     = var.hastate
+  hagroup     = var.hagroup
+  clone       = var.template_name
+  os_type     = var.os_type
 
-  clone   = var.template_name
-  os_type = var.os_type
-
+  # Hardware
   cores   = var.cores
   sockets = var.sockets
   memory  = var.memory
