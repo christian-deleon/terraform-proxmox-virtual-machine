@@ -19,16 +19,16 @@ resource "proxmox_vm_qemu" "this" {
   memory  = var.memory
 
   network {
-    model  = "virtio"
-    bridge = "vmbr0"
+    model  = var.network_model
+    bridge = var.network_bridge
   }
 
   disks {
     scsi {
       scsi0 {
         disk {
-          size    = 10
-          storage = "ceph"
+          size    = var.disk_size
+          storage = var.storage_name
         }
       }
     }
