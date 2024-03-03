@@ -8,6 +8,7 @@ terraform {
 
 resource "proxmox_vm_qemu" "this" {
   name        = var.name
+  vmid        = var.vmid
   target_node = var.target_node
 
   clone   = var.template_name
