@@ -127,7 +127,7 @@ variable "storage_name" {
 
 variable "scsihw" {
   type        = string
-  default     = null
+  default     = "virtio-scsi-single"
   description = "The SCSI controller type. Options: lsi, virtio-scsi-pci, virtio-scsi-single"
 }
 
