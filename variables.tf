@@ -35,6 +35,12 @@ variable "qemu_agent" {
   description = "Enable the QEMU Guest Agent"
 }
 
+variable "tags" {
+  type        = list(string)
+  default     = []
+  description = "The tags of the virtual machine"
+}
+
 ############################################
 # Cloud-init settings
 ############################################

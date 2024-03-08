@@ -14,6 +14,7 @@ resource "proxmox_vm_qemu" "this" {
   target_node = var.target_node
   clone       = var.template_name
   agent       = var.qemu_agent ? "1" : "0"
+  tags        = join(",", var.tags)
 
   # Cloud-init settings
   os_type                 = var.os_type
