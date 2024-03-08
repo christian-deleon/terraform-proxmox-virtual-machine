@@ -53,12 +53,14 @@ variable "cloudinit_user" {
 variable "cloudinit_password" {
   type        = string
   default     = null
+  sensitive   = true
   description = "The cloud-init user password"
 }
 
 variable "cloudinit_sshkey" {
   type        = string
   default     = null
+  sensitive   = true
   description = "The cloud-init user ssh key"
 }
 
