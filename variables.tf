@@ -41,6 +41,18 @@ variable "tags" {
   description = "The tags of the virtual machine"
 }
 
+variable "vm_state" {
+  type        = string
+  default     = "running"
+  description = "The state of the virtual machine. Options: running, stopped, and started"
+}
+
+variable "automatic_reboot" {
+  type        = bool
+  default     = false
+  description = "Enable automatic reboot"
+}
+
 ############################################
 # Cloud-init settings
 ############################################
@@ -104,7 +116,7 @@ variable "vcpus" {
   description = "The number of vcpus"
 }
 
-variable "cpu" {
+variable "cpu_type" {
   type        = string
   default     = "host"
   description = "The CPU type. Options: host, kvm64, kvm32, core2duo, pentium, phenom, qemu32, qemu64"
